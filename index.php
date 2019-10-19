@@ -15,8 +15,6 @@
   <body>
       <?php include('./components/header.php') ?>
       <?php include('./components/home_hero.php') ?>
-      <?php include('./components/home_hero.php') ?>
-      <?php include('./components/home_hero.php') ?>
       <?php include('./components/footer.php') ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

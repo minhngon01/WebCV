@@ -11,9 +11,7 @@
                     <a class="home-button button" href="/create-resume">Create My Resume</a>
                 </div>
             </div>
-
-            <a class="home-hero-resume is-image-loaded">
-            </a>
+            <img class = "hero-resume-image"src = "./images/hero-resume.png"> <img/>
         </div>
         
     </div>

@@ -147,7 +147,6 @@ footer {
   width: 100%;
   display: flex;
   align-items: center;
-  
 }
 
 .home-hero-maincontent {
@@ -155,7 +154,8 @@ footer {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 48px;
+  max-height: 700px;
+  overflow: hidden;
 }
 
 .home-hero-title {
@@ -190,4 +190,8 @@ footer {
 
 .home-hero-resume {
   background-image: url(https://cdn.resume.io/assets/landing/home/hero-resume-063a5dd2cf40856211a0ee2ddc232af6dc3b5804c25c23e627ae2f8637909939.png);
+}
+
+.hero-resume-image {
+  margin-top: 40px;
 }

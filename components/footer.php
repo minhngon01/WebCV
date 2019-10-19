@@ -99,14 +99,5 @@
             </div>
         </div>
     </div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    <button onclick="changeColor()" id="myBtn" title="Change color">Color</button>
+
 </footer>
-
-<script>
-mybutton = document.getElementById("myBtn");
-
-function topFunction() {
-  document.documentElement.scrollTop = 0;
-}
-</script>
