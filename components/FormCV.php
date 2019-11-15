@@ -1,0 +1,84 @@
+	<form action"#" method="POST">
+		<div id="doc" class="yui-t">
+			<div id="inner">
+				<div id="hd">
+					<div>
+						<table class="basic_inform">
+							<tr>
+								<th>Name</th>
+								<th><textarea rows="1" cols="50" required="required" name="CVname"></textarea></th>
+							</tr>
+							<tr>
+								<th>Apply position</th>
+								<th><textarea rows="1" cols="50" required="required" name="CVposition"></textarea></th>
+							</tr>
+							<tr>
+								<th>Your website</th>
+								<th><textarea rows="1" cols="50" required="required" name="CVwebsite"></textarea></th>
+							</tr>
+							<tr>
+								<th>Contact numbers</th>
+								<th><textarea rows="1" cols="50" required="required" name="CVphone"></textarea></th>
+							</tr>
+							<tr>
+								<th>Address</th>
+								<th><textarea rows="1" cols="50" required="required" name="CVaddress"></textarea></th>
+							</tr>
+							<tr>
+								<th>Image(not required)</th>
+								<th><input type="file" name="CVimage"/></th>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div id="bd">
+					<div id="yui-main">
+						<div class="yui-b">
+							<div class="yui-gf">
+								<div class="yui-u first">
+									<h2>Profile</h2>
+								</div>
+								<div class="yui-u">
+									<textarea rows="5" cols="60" required="required" name="CVprofile"></textarea> 
+								</div>
+							</div>
+							<div class="yui-gf">
+								<div class="yui-u first">
+									<h2>Skills</h2>
+								</div>
+								<div class="yui-u">
+									<textarea rows="5" cols="60" required="required" name="CVskill"></textarea>
+								</div>
+							</div>
+							<div class="yui-gf">
+								<div class="yui-u first">
+									<h2>Technical</h2>
+								</div>
+								<div class="yui-u">
+									<textarea rows="5" cols="60" required="required" name="CVtech"></textarea>
+								</div>
+							</div>
+							<div class="yui-gf">
+								<div class="yui-u first">
+									<h2>Experience</h2>
+								</div>
+								<div class="yui-u">
+									<textarea rows="6" cols="60" required="required" name="CVexperi"></textarea>
+								</div>
+							</div>
+							<div class="yui-gf last">
+								<div class="yui-u first">
+									<h2>Education</h2>
+								</div>
+								<div class="yui-u">
+									<textarea rows="5" cols="60" required="required" name="CVedu"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<input class="" type="submit" value="Submit"/>
+	</form>	
+
