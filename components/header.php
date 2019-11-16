@@ -31,8 +31,8 @@
   </head>
   <body>
 	<nav class="navbar navbar-expand-md navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="./images/for-light-bg.svg" alt="">
+        <a class="navbar-brand" href="?page=home_hero">
+            <img class="small_icon" src="./images/BK.png" alt="BK_logo"><div class="text-primary">Simple CV creator</div>
         </a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -67,3 +67,4 @@
             </ul>   
         </div>
 	</nav>
+    <div class="container">

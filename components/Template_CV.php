@@ -1,3 +1,37 @@
+	<div>
+	<?php
+		$db_handle = new DBController();
+		$product_name = "test";
+		$sql_query = "SELECT * from CV where user = '$product_name'";
+		$result = $db_handle->runQuery($sql_query);
+		$num_rows = $db_handle->numRows($sql_query);
+		if ($num_rows==0) {
+
+		}else{
+			foreach ( $result as $CV ) {
+				echo "<div>";
+				echo "<h1>" . "Name " . $CV["name"] . "</h1>" . "<br>";
+				echo "<h2>" . "Apply position: " . $CV["apply_position"] . "</h2>" . "<br>";
+				echo "<h3>" . "Website: " . $CV["website"] . "</h3>" . "<br>";
+				echo "<h3>" . "Contact number: " . $CV["contact_number"] . "</h3>" . "<br>";
+				if($CV["img"] == null){
+					/*echo "<img src=\"" . "wwwroot/images/sorry.jpg" . "\" alt=\"Laptop is not found\" height=\"30%\" width=\"30%\"/>";
+					echo "<h4>Laptop image is not found</h4>";
+					echo "<h4>We are trying to fix this problem.</h4>";*/
+					echo "<div>Image: Not found</div>";
+				}
+				else{
+					//echo "<img src=\"" . $CV["Image"] . "\" alt=\"Laptop\" height=\"30%\" width=\"30%\"/>";
+					echo "<div>Image: Found</div>";
+				}
+				echo "Profile: " . "<p>" . nl2br($CV["profile"]) . "</p>";
+				echo "</div>";
+			}
+		}
+	?>
+	</div>
+
+
 	<div id="mydiv">
 		<div id="doc">
 			<div id="inner">

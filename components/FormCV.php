@@ -1,4 +1,8 @@
-	<form action"#" method="POST">
+	<div class="text-danger">
+		Enter your infomation into below form. We will use these information to make your CV. If you can't input all of these, don't worry! We wil simply gather 
+		the rest to make your CV, but we recommend to input all information in order to make a good CV.
+	</div>
+	<form action="?page=FormCV_process" method="POST" enctype="multipart/form-data">
 		<div id="doc" class="yui-t">
 			<div id="inner">
 				<div id="hd">
@@ -6,27 +10,27 @@
 						<table class="basic_inform">
 							<tr>
 								<th>Name</th>
-								<th><textarea rows="1" cols="50" required="required" name="CVname"></textarea></th>
+								<th><textarea rows="1" cols="50" name="CVname"></textarea></th>
 							</tr>
 							<tr>
 								<th>Apply position</th>
-								<th><textarea rows="1" cols="50" required="required" name="CVposition"></textarea></th>
+								<th><textarea rows="1" cols="50" name="CVposition"></textarea></th>
 							</tr>
 							<tr>
 								<th>Your website</th>
-								<th><textarea rows="1" cols="50" required="required" name="CVwebsite"></textarea></th>
+								<th><textarea rows="1" cols="50" name="CVwebsite"></textarea></th>
 							</tr>
 							<tr>
 								<th>Contact numbers</th>
-								<th><textarea rows="1" cols="50" required="required" name="CVphone"></textarea></th>
+								<th><textarea rows="1" cols="50" name="CVphone"></textarea></th>
 							</tr>
 							<tr>
 								<th>Address</th>
-								<th><textarea rows="1" cols="50" required="required" name="CVaddress"></textarea></th>
+								<th><textarea rows="1" cols="50" name="CVaddress"></textarea></th>
 							</tr>
 							<tr>
-								<th>Image(not required)</th>
-								<th><input type="file" name="CVimage"/></th>
+								<th>Image</th>
+								<th><input type="file" name="image"/></th>
 							</tr>
 						</table>
 					</div>
@@ -39,7 +43,7 @@
 									<h2>Profile</h2>
 								</div>
 								<div class="yui-u">
-									<textarea rows="5" cols="60" required="required" name="CVprofile"></textarea> 
+									<textarea rows="5" cols="60" name="CVprofile"></textarea> 
 								</div>
 							</div>
 							<div class="yui-gf">
@@ -47,7 +51,7 @@
 									<h2>Skills</h2>
 								</div>
 								<div class="yui-u">
-									<textarea rows="5" cols="60" required="required" name="CVskill"></textarea>
+									<textarea rows="5" cols="60" name="CVskill"></textarea>
 								</div>
 							</div>
 							<div class="yui-gf">
@@ -55,7 +59,7 @@
 									<h2>Technical</h2>
 								</div>
 								<div class="yui-u">
-									<textarea rows="5" cols="60" required="required" name="CVtech"></textarea>
+									<textarea rows="5" cols="60" name="CVtech"></textarea>
 								</div>
 							</div>
 							<div class="yui-gf">
@@ -63,7 +67,7 @@
 									<h2>Experience</h2>
 								</div>
 								<div class="yui-u">
-									<textarea rows="6" cols="60" required="required" name="CVexperi"></textarea>
+									<textarea rows="6" cols="60" name="CVexperi"></textarea>
 								</div>
 							</div>
 							<div class="yui-gf last">
@@ -71,7 +75,7 @@
 									<h2>Education</h2>
 								</div>
 								<div class="yui-u">
-									<textarea rows="5" cols="60" required="required" name="CVedu"></textarea>
+									<textarea rows="5" cols="60" name="CVedu"></textarea>
 								</div>
 							</div>
 						</div>
@@ -79,6 +83,6 @@
 				</div>
 			</div>
 		</div>
-		<input class="" type="submit" value="Submit"/>
+		<input class="btn btn-info" type="submit" value="Submit"/>
 	</form>	
 
