@@ -3,10 +3,10 @@
 	require_once("./components/model.php");
 	$db_handle = new DBController();
 	$cookie = new Cookies();
-	/* đây là phân quyền 
+
 	if(empty($_COOKIE['username'])){
 		$_SESSION['enableDisplay'] = 0;
-		$_SESSION['user_info'] = 4;
+		$_SESSION['user_role'] = 4;
 	}
 	else{
 		$username = $_COOKIE['username'];
@@ -27,12 +27,12 @@
 			$db_handle->runInsertQuery($sql_insert);
 		}
 
-		$sql_query2 = "SELECT * from user_info where name = '$username'";
+		$sql_query2 = "SELECT * from user_info where username = '$username'";
 		$result2 = $db_handle->runQuery($sql_query2);
 
 		$_SESSION['user_role'] = $result2[0]["role"] == null ? 4 : $result2[0]["role"]; 
 	}
-	*/
+	
 	if(isset($_GET['page']) || isset($_POST['page'])){
 		if(isset($_GET['page'])){
 			$page = $_GET['page'];

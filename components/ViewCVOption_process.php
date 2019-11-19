@@ -1,27 +1,16 @@
+	<div>
 	<?php
-		if(empty($_COOKIE['username'])){
-			header("location:index.php");	
-		}
+		$db_handle = new DBController();
+		$user = $_SESSION['username'];
+		$cv_name = $_GET['cv_name'];
 
-		if(isset($_GET['enableSearch'])){
-			$user = $_SESSION['username'];
-			$nameofCV = $_GET['enableSearch'];
-			$sql_query = "SELECT * from CV where cv_name = '$nameofCV' and user = '$user'";
-			$result = $db_handle->runQuery($sql_query);
-		}
+		$sql_query = "SELECT * from CV where user = '$user' and cv_name = '$cv_name'";
+		$result = $db_handle->runQuery($sql_query);
+		$num_rows = $db_handle->numRows($sql_query);
 	?>
-	<h6 class="text-danger">
-		Enter your infomation into below form. We will use these information to make your CV. If you can't input all of these, don't worry! We wil simply gather 
-		the rest to make your CV, but we recommend to input all information in order to make a good CV.
-	</h6>
-	<div class="text-info">
-		This also can be used to edit your CV according to your CV name. Just enter your CV name and click Search(below button); after that start editing!
 	</div>
-	<button class="btn btn-success" onclick="search_CV()">Search</button>
-	<h6 class="text-primary">
-		Note: Image size cannot be larger than 200KB and if you leave image input empty and click submit, the process will delete an existed image if it is avaliable.
-	</h6>
-	<form action="?page=FormCV_process" method="POST" enctype="multipart/form-data">
+
+	<div id="printDiv">
 		<div id="doc">
 			<div id="inner">
 				<div id="hd">
@@ -145,6 +134,5 @@
 				</div>
 			</div>
 		</div>
-		<input class="btn btn-info" type="submit" value="Submit"/>
-	</form>	
-
+	</div>
+	<input type="button" class="btn btn-success" value="Print/Download" onclick="printDiv('printDiv')" />
