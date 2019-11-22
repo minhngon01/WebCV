@@ -267,11 +267,23 @@ footer {
 	margin-top: 40px;
 }
 
+#formCV{
+	background:#FFF;
+	font: 13px/1.231 Georgia;
+	color: #444; 
+	text-align:center;
+}
+
 #doc{
 	margin:auto;
 	text-align:left;
 	width:73.076em;
 }
+
+	#doc h1,#doc h2,#doc h3 {
+		font-weight:normal;
+		color: #333; 
+	}
 
 	#doc #yui-main .yui-b{
 		display:block;
@@ -328,16 +340,11 @@ footer {
 	.yui-gf .yui-u h2 { 
 		font-size: 152%;
 	}
-		
-	.yui-gc .yui-u h1, .yui-gf .yui-u h2, .yui-gc .yui-u h3{
-		font-weight:normal;
-		color: #333; 
-	}
 	
 #hd { 
 	margin: 2.5em 0 3em 0; 
 	padding-bottom: 1.5em; 
-	border-bottom: 1px solid #ccc 
+	border-bottom: 1px solid #ccc; 
 }
 
 	#hd h1 { 
@@ -345,11 +352,31 @@ footer {
 		text-transform: uppercase; 
 		letter-spacing: 3px; 
 	}
+
+		#hd h1 input { 
+		width: 70%;
+		font-size: 24px; 
+		text-transform: uppercase; 
+		letter-spacing: 3px;
+	}
 	
 	#hd h2 { 
 		text-transform: uppercase; 
 		letter-spacing: 2px; 
 	}
+
+		#hd h2 input{ 
+			width: 70%;
+			font-size: 19.766px;
+			text-transform: uppercase; 
+			font-style: italic; 
+			letter-spacing: 2px;
+		}
+
+		#hd h3 input { 
+			font: 13px/1.231 Georgia;
+			text-align: right;
+		}
 	
 	#hd:after,#bd:after,.yui-gf:after{
 		content:".";
@@ -359,16 +386,19 @@ footer {
 		visibility:hidden;
 	}
 
+	#doc #inner input:disabled, #doc #inner textarea:disabled {
+		background-color: #f5f5f5;
+		background: none;
+	}
+
+#doc #inner textarea {
+	font-size: 16.9px;
+	line-height: 24px; 
+	resize: none;
+}
+
 #bd{ 
 	margin-bottom: 2em; 
-}
-
-.last { 
-	border: none; 
-}
-
-.basic_inform tr th{
-	padding: 10px;
 }
 
 .contact-info { 
@@ -381,29 +411,30 @@ footer {
 	line-height: 24px; 
 }
 
-#bd, #ft_CV { 
+#bd { 
 	margin-bottom: 2em; 
 }
 
-#ft_CV { 
-	padding: 1em 0 5em 0; 
-	font-size: 92%; 
-	border-top: 1px solid #ccc; 
-	text-align: center; 
+.delete_border {
+	border: none;
 }
 
-#ft_CV p { 
-	margin-bottom: 0; 
-	text-align: center;   
-}
-
-#CV_image{
+#CV_image {
 	border-style: ridge;
-	width: 120px;
-	height: 140px;
+	max-width: 120px;
+	max-height: 140px;
 	float: left;
 	margin: 1em;
 }
+
+#inputCV_processBar{
+	margin: 10px auto;
+	width: 73.076em;
+}
+
+	#inputCV_processBar span{
+		font-size: 18px;
+	}
 
 .small_icon{
 	width: 30px;
@@ -598,7 +629,4 @@ footer {
 	height: 32em;
 }
 
-#CVphone-add{
-	font-size: 20px;
-	width: 525px;
-}
+.tempt_checked_inputCV

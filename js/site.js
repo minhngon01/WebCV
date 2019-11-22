@@ -8,6 +8,71 @@ $(document).ready(function(){
 	$(function(){
 		$("#info_msg").fadeOut(5000);
 	});
+
+	// formCV review button
+	$("#btn_form_review").click(function(){
+		if($("#btn_form_review").val() == "Input"){
+			$("#doc #inner input").prop('disabled', false);
+			$("#doc #inner textarea").prop('disabled', false);
+			
+			$("#btn_form_review").val("Review");
+		}
+		else if($("#btn_form_review").val() == "Review"){
+			$("#doc #inner input").prop('disabled', true);
+			$("#doc #inner textarea").prop('disabled', true);
+			
+			$("#btn_form_review").val("Input");
+		}
+		$("#doc #inner input").toggleClass("delete_border");
+		$("#doc #inner textarea").toggleClass("delete_border");
+	});
+	
+	// show/hide part of formCV
+	$("#btn_toogle_Profile_area").click(function(){
+		$("#btn_toogle_Profile_area i").hasClass("fas fa-plus") ? $("#btn_toogle_Profile_area i").removeClass("fas fa-plus").addClass("fas fa-minus") :
+																  $("#btn_toogle_Profile_area i").removeClass("fas fa-minus").addClass("fas fa-plus");
+		
+		$("#Profile_area").toggle(1000);
+	});	
+	
+	$("#btn_toogle_Skills_area").click(function(){
+		$("#btn_toogle_Skills_area i").hasClass("fas fa-plus") ? $("#btn_toogle_Skills_area i").removeClass("fas fa-plus").addClass("fas fa-minus") :
+																 $("#btn_toogle_Skills_area i").removeClass("fas fa-minus").addClass("fas fa-plus");
+		
+		$("#Skills_area").toggle(1000);
+	});	
+	
+	$("#btn_toogle_Technical_area").click(function(){
+		$("#btn_toogle_Technical_area i").hasClass("fas fa-plus") ? $("#btn_toogle_Technical_area i").removeClass("fas fa-plus").addClass("fas fa-minus") :
+																  $("#btn_toogle_Technical_area i").removeClass("fas fa-minus").addClass("fas fa-plus");
+		
+		$("#Technical_area").toggle(1000);
+	});	
+	
+	$("#btn_toogle_Experience_area").click(function(){
+		$("#btn_toogle_Experience_area i").hasClass("fas fa-plus") ? $("#btn_toogle_Experience_area i").removeClass("fas fa-plus").addClass("fas fa-minus") :
+																  $("#btn_toogle_Experience_area i").removeClass("fas fa-minus").addClass("fas fa-plus");
+		
+		$("#Experience_area").toggle(1000);
+	});	
+	
+	$("#btn_toogle_Education_area").click(function(){
+		$("#btn_toogle_Education_area i").hasClass("fas fa-plus") ? $("#btn_toogle_Education_area i").removeClass("fas fa-plus").addClass("fas fa-minus") :
+																  $("#btn_toogle_Education_area i").removeClass("fas fa-minus").addClass("fas fa-plus");
+		
+		$("#Education_area").toggle(1000);
+	});	
+	
+	// Check for changing progressBar
+	$("#doc #inner input").on('input',function(){
+		checkInput(this);
+	});
+	
+	// and resize textarea
+	$("#doc #inner textarea").on('input',function(){
+		do_resize(this);
+		checkInput(this);
+	});
 });
 
 function checkRegister(){
@@ -33,57 +98,6 @@ function checkRegister(){
 	return true;
 }
 
-function search_CV(){
-	var nameofCV = $('#nameofCV-add').val();
-	if(nameofCV == ""){
-		$('#CVname-add').val("");
-		$('#CVposition-add').val("");
-		$('#CVwebsite-add').val("");
-		$('#CVphone-add').val("");
-		$('#CVaddress-add').val("");
-		$('#CVimage-add').val("");
-		$('#CVprofile-add').val("");
-		$('#CVskill-add').val("");
-		$('#CVtech-add').val("");
-		$('#CVexperi-add').val("");
-		$('#CVedu-add').val("");
-		return;
-	}
-	else{
-		window.location.href = "?page=FormCV&enableSearch=" + nameofCV;
-		/*$.ajax({
-			type: "POST",
-			url: "http://localhost/components/searchCVadd.php",
-			data: "nameofCV="+nameofCV,
-			success: function(data){
-				alert("s");
-				$('#CVname-add').val(data[0]);
-				$('#CVposition-add').val(data[1]);
-				$('#CVwebsite-add').val(data[2]);
-				$('#CVphone-add').val(data[3]);
-				$('#CVaddress-add').val(data[4]);
-				if(data.length != 0){
-					if(data[5] != ""){
-						$('#CVimage-add').html("Image is avaliable");
-					}
-				}
-				else{
-					$('#CVimage-add').html("");
-				}
-				$('#CVprofile-add').val(data[6]);
-				$('#CVskill-add').val(data[7]);
-				$('#CVtech-add').val(data[8]);
-				$('#CVexperi-add').val(data[9]);
-				$('#CVedu-add').val(data[10]);
-			},
-			dataType: "json",
-			error: function(data){
-				alert("fail");
-			}
-		});*/
-	}
-}
-
 function printDiv(selector) {
     var prtContent = document.getElementById(selector);
 	var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
@@ -96,4 +110,74 @@ function printDiv(selector) {
 	WinPrint.focus();
 	WinPrint.print();
 	WinPrint.close();
+}
+
+function do_resize(textbox) {
+	var maxrows=10; 
+	var initialRow = 2;
+	var txt=textbox.value;
+	var cols=textbox.cols;
+	var arraytxt=txt.split('\n');
+	var rows=arraytxt.length; 
+	
+	for (i=0;i<arraytxt.length;i++) {
+		rows+=parseInt(arraytxt[i].length/cols);
+	}
+	
+	if(rows > initialRow){
+		if (rows>maxrows) {
+			textbox.rows=maxrows;
+		}
+		else {
+			textbox.rows=rows;
+		}
+	}
+	else{
+		textbox.rows = initialRow;
+	}
+}
+
+function preview_image(event) {
+	var reader = new FileReader();
+	
+	reader.onload = function(){
+		var output = document.getElementById('CV_image');
+		output.src = reader.result;
+	}
+	reader.readAsDataURL(event.target.files[0]);
+}
+
+function checkInput(textbox){
+	var txt=textbox.value;
+	
+	if(txt != ""){
+		if($("#" + textbox.id).hasClass("tempt_checked_inputCV")){
+			return;
+		}
+		else {
+			adjustProgessBar(true);
+			
+			$("#" + textbox.id).addClass("tempt_checked_inputCV");
+		}
+	}
+	else {
+		adjustProgessBar(false);
+		
+		$("#" + textbox.id).removeClass("tempt_checked_inputCV");
+	}
+}
+
+function adjustProgessBar(increase){
+	var processBarWidth = parseFloat($("#inputCV_processBar .progress .progress-bar").css("width"));
+	var processBarParentWidth = parseFloat($("#inputCV_processBar").css("width"));
+	var myPercentage = Math.round(processBarWidth / processBarParentWidth * 100);
+	
+	var adjust = increase ? myPercentage + 10 : myPercentage - 10;
+	$("#inputCV_processBar .progress .progress-bar").css("width", adjust + "%");
+	
+ 	evalu = adjust >= 80 ? "Excellent" : adjust >= 60 ? "Good" : adjust >= 40 ? "Basic" : "Bad";
+	
+	var message = adjust != 0 ? adjust + " % " + evalu : "";
+	
+	$("#inputCV_processBar .progress .progress-bar").html(message);
 }
