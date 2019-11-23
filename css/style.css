@@ -490,12 +490,7 @@ footer {
 #RegisterForm input[type="password"]:focus {
   background: #fff;
 }
-#RegisterForm span {
-  display: block;
-  background: #F9A5A5;
-  padding: 2px 5px;
-  color: #666;
-}
+
 #RegisterForm input[type="submit"] {
   background: rgba(148, 186, 101, 0.7);
   box-shadow: 0 3px 0 0 rgba(123, 163, 73, 0.7);
