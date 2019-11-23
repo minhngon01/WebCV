@@ -210,8 +210,8 @@ footer {
 	display: block;
 	width: 100%;
 	margin: 0 auto;
-	padding-top: 40px;
-	padding-bottom:10px;
+	padding-top: 80px;
+	background-color: #f2f5fa ;
 }
 
 .home-hero-main {
@@ -524,7 +524,6 @@ footer {
   display: inline-block;
   padding: 4px 10px;
   font-weight: 400;
-
   -moz-transition: color 0.3s, top 0.3s, background-color 0.8s;
   -o-transition: color 0.3s, top 0.3s, background-color 0.8s;
   -webkit-transition: color 0.3s, top 0.3s, background-color 0.8s;
@@ -552,6 +551,7 @@ footer {
   	font-family: sans-serif;
 	font-size: 20px;
 	margin: 25px 0px 75px 0px;
+
 }
 .log-form {
 	margin: 0 auto;
@@ -627,3 +627,4 @@ footer {
 	height: 32em;
 }
 
+.tempt_checked_inputCV

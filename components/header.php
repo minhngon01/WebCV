@@ -36,7 +36,7 @@
             }
         ?>  
     </h5>
-	<nav class="navbar navbar-expand-md navbar-light bg-light">
+	<nav class="navbar navbar-expand-md navbar-light bg-light" style="background:  !important;">
         <a class="navbar-brand" href="?page=home_hero">
             <img class="small_icon" src="./imageStatic/BK.png" alt="BK_logo"><div class="text-primary">Simple CV creator</div>
         </a>
