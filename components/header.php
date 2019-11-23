@@ -55,7 +55,7 @@
                     }
                 ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Guides</a>
+                    <a class="nav-link" href="?page=about">Guides</a>
                 </li>
                 <?php 
                     if($_SESSION['enableDisplay'] == 0){

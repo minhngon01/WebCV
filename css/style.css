@@ -627,3 +627,31 @@ footer {
 	height: 32em;
 }
 
+.about-main-cotent {
+	width: 100%;
+	padding: 50px 0; 
+}
+.about-main-cotent .title {
+	padding-left: 50px;
+	margin-bottom: 50px; 
+}
+.about-main-cotent .title p {
+	color: grey;
+	font-weight: 600;
+	letter-spacing: 2px; 
+}
+.about-main-cotent .title h5 {
+	font-size: 32px;
+	font-weight: 400 !important; 
+}
+.about-main-cotent .title h5 .subtitle {
+	font-size: 32px;
+	color: #2196f3;
+	font-weight: 600; 
+}
+.about-main-cotent .img {
+	  margin-bottom: 50px; 
+}
+.about-main-cotent .img img {
+	width: 100%; 
+}
