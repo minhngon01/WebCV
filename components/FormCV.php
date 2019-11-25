@@ -13,14 +13,14 @@
 	<div class="container">
 		<div id="formCV">
 			<input type="button" id="btn_form_review" class="btn btn-info" value="Review"/>
-			<button id="btn_toogle_Profile_area" class="btn btn-info"><i class="fas fa-minus"></i></button>
-			<button id="btn_toogle_Skills_area" class="btn btn-info"><i class="fas fa-minus"></i></button>
-			<button id="btn_toogle_Technical_area" class="btn btn-info"><i class="fas fa-minus"></i></button>
-			<button id="btn_toogle_Experience_area" class="btn btn-info"><i class="fas fa-minus"></i></button>
-			<button id="btn_toogle_Education_area" class="btn btn-info"><i class="fas fa-minus"></i></button>
+			<button type="button" style="display: none" class="btn_toogle_Profile_area btn btn-info add"><i class="fas fa-plus"></i></button>
+			<button type="button" style="display: none" class="btn_toogle_Skills_area btn btn-info add "><i class="fas fa-plus"></i></button>
+			<button type="button"  style="display: none" class="btn_toogle_Technical_area btn btn-info add"><i class="fas fa-plus"></i></button>
+			<button type="button" style="display: none" class="btn_toogle_Experience_area btn btn-info add"><i class="fas fa-plus"></i></button>
+			<button type="button" style="display: none" class="btn_toogle_Education_area btn btn-info add"><i class="fas fa-plus"></i></button>
 			<form action="?page=FormCV_process" method="POST" enctype="multipart/form-data">
 				<div id="inputCV_processBar">
-					<span>Your progress: </span>
+					<span>Your progress: </span>	
 					<div class="progress">
 						<div class="progress-bar progress-bar-striped progress-bar-animated" style="width:0%">
 							
@@ -55,50 +55,65 @@
 										<div class="yui-u first">
 											<h2>Profile</h2>
 										</div>
-										<div class="yui-u">
+										<div class="yui-u second">
 											<p>
 												<textarea id="CVprofile-add" rows="2" cols="60" name="CVprofile"></textarea> 
 											</p>
+										</div>
+										<div class="yui-u third">
+											<button type="button"  class="btn_toogle_Profile_area btn btn-info delete"><i class="fas fa-minus"></i></button>
 										</div>
 									</div>
 									<div id="Skills_area" class="yui-gf">
 										<div class="yui-u first">
 											<h2>Skills</h2>
 										</div>
-										<div class="yui-u">
+										<div class="yui-u second">
 											<p>
 												<textarea id="CVskill-add" rows="2" cols="60" name="CVskill"></textarea> 
 											</p>
+										</div>
+										<div class="yui-u third">
+											<button type="button"  class="btn_toogle_Skills_area btn btn-info delete "><i class="fas fa-minus"></i></button>
 										</div>
 									</div>
 									<div id="Technical_area" class="yui-gf">
 										<div class="yui-u first">
 											<h2>Technical</h2>
 										</div>
-										<div class="yui-u">
+										<div class="yui-u second">
 											<p>
 												<textarea id="CVtech-add" rows="2" cols="60" name="CVtech"></textarea> 
 											</p>
+										</div>
+										<div class="yui-u third">
+											<button type="button"  class="btn_toogle_Technical_area btn btn-info delete"><i class="fas fa-minus"></i></button>
 										</div>
 									</div>
 									<div id="Experience_area" class="yui-gf">
 										<div class="yui-u first">
 											<h2>Experience</h2>
 										</div>
-										<div class="yui-u">
+										<div class="yui-u second">
 											<p>
 												<textarea id="CVexperi-add" rows="2" cols="60" name="CVexperi"></textarea> 
 											</p>
+										</div>
+										<div class="yui-u third">
+											<button type="button"  class="btn_toogle_Experience_area btn btn-info delete"><i class="fas fa-minus"></i></button>
 										</div>
 									</div>
 									<div id="Education_area" class="yui-gf">
 										<div class="yui-u first">
 											<h2>Education</h2>
 										</div>
-										<div class="yui-u">
+										<div class="yui-u second">
 											<p>
 												<textarea id="CVedu-add" rows="2" cols="60" name="CVedu"></textarea> 
 											</p>
+										</div>
+										<div class="yui-u third">
+											<button type="button"  class="btn_toogle_Education_area btn btn-info delete"><i class="fas fa-minus"></i></button>
 										</div>
 									</div>
 								</div>
