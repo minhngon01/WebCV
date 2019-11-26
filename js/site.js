@@ -16,71 +16,18 @@ $(document).ready(function(){
 			$("#doc #inner textarea").prop('disabled', false);
 			
 			$("#btn_form_review").val("Review");
-			$('.btn_toogle_Profile_area').each(function(index, element){
-				$(element).show();
-				// console.log(index);
-				if($(element).hasClass('delete') == true){
-					console.log(CheckDisplay('btn_toogle_Profile_area'));
-					if(CheckDisplay('btn_toogle_Profile_area') == "none"){
-						$('.btn_toogle_Profile_area:nth-child(1)').show();
-					}
-					else{
-						$('.btn_toogle_Profile_area:nth-child(1)').hide();
-					}
-				}
 			
-			})
-			$('.btn_toogle_Skills_area').each(function(index, element){
-				$(element).show();
-				
-				if($(element).hasClass('delete') == true){
-					// console.log($(element))
-					console.log(CheckDisplay('btn_toogle_Skills_area'));
+			$('.btn_toogle_Profile_area').show();
+			$('.btn_toogle_Skills_area').show();
+			$('.btn_toogle_Technical_area').show();
+			$('.btn_toogle_Experience_area').show();
+			$('.btn_toogle_Education_area').show();
+			
+			$('.selectSection').toggle(500);
+			$('.ImageSection').toggle(500);
 
-					if(CheckDisplay('btn_toogle_Skills_area') == "none"){
-						$('.btn_toogle_Skills_area:nth-child(1)').show();
-						
-					}
-					else{
-						$('.btn_toogle_Skills_area:nth-child(1)').hide();
 
-					}
-				}
-			})
-			$('.btn_toogle_Technical_area').each(function(index, element){
-				$(element).show();
-				if($(element).hasClass('delete')){
-					if(CheckDisplay('btn_toogle_Technical_area') == "none"){
-						$('.btn_toogle_Technical_area:nth-child(1)').show();
-					}
-					else{
-						$('.btn_toogle_Technical_area:nth-child(1)').hide();
-
-					}
-				}
-			})
-			$('.btn_toogle_Experience_area').each(function(index, element){
-				$(element).show();
-				if($(element).hasClass('delete')){
-					if(CheckDisplay('btn_toogle_Experience_area') == "none"){
-						$('.btn_toogle_Experience_area:nth-child(1)').show();
-					}
-					else{
-						$('.btn_toogle_Experience_area:nth-child(1)').hide();
-					}
-				}
-			})
-			$('.btn_toogle_Education_area').each(function(index, element){
-				$(element).show();
-				if($(element).hasClass('delete')){
-					if(CheckDisplay('btn_toogle_Education_area') == "none"){
-						$('.btn_toogle_Education_area:nth-child(1)').show();
-					}
-					else{
-						$('.btn_toogle_Education_area:nth-child(1)').hide();
-					}
-				}
-			})
+			
 		}
 		else if($("#btn_form_review").val() == "Review"){
 			$("#doc #inner input").prop('disabled', true);
@@ -88,21 +35,15 @@ $(document).ready(function(){
 			
 			$("#btn_form_review").val("Input");
 
-			$('.btn_toogle_Profile_area').each(function(index, element){
-				$(element).hide();
-			})
-			$('.btn_toogle_Skills_area').each(function(index, element){
-				$(element).hide();
-			})
-			$('.btn_toogle_Technical_area').each(function(index, element){
-				$(element).hide();
-			})
-			$('.btn_toogle_Experience_area').each(function(index, element){
-				$(element).hide();
-			})
-			$('.btn_toogle_Education_area').each(function(index, element){
-				$(element).hide();
-			})
+			$('.btn_toogle_Profile_area').hide();
+			$('.btn_toogle_Skills_area').hide();
+			$('.btn_toogle_Technical_area').hide();
+			$('.btn_toogle_Experience_area').hide();
+			$('.btn_toogle_Education_area').hide();
+			$('.selectSection').toggle(500);
+			$('.ImageSection').toggle(500);
+
+
 		}
 		$("#doc #inner input").toggleClass("delete_border");
 		$("#doc #inner textarea").toggleClass("delete_border");
@@ -114,96 +55,39 @@ $(document).ready(function(){
 	}
 
 	// show/hide part of formCV
+	// add section
+	$('.btnAddField').on('click', function(){
+		var select_value = $('.select_add_field').val();
+		if(CheckDisplay('btn_toogle_'+ select_value + '_area') == 'none'){
+			$('#' + select_value + '_area').toggle(1000);
+		}else if (CheckDisplay('btn_toogle_'+ select_value + '_area') == undefined){
+			alert('Please check your select again');
+		}else{
+			alert('The ' + select_value +' section has already'  );
+
+		}
+	})	
 	$(".btn_toogle_Profile_area").click(function(){
 		$("#Profile_area").toggle(1000);
-		if ($(this).hasClass('add')){
-			$('.btn_toogle_Profile_area').each(function(index, element){
-				if ($(element).hasClass('add')){
-					$(element).hide();
-				}
-			})
-		}
-		if ($(this).hasClass('delete')){
-			$('.btn_toogle_Profile_area').each(function(index, element){
-				if ($(element).hasClass('add')){
-					$(element).show();
-				}
-			})
-		}
+		
 	});	
 	
 	$(".btn_toogle_Skills_area").click(function(){
 		$("#Skills_area").toggle(1000);
-		if ($(this).hasClass('add')){
-			$('.btn_toogle_Skills_area').each(function(index, element){
-				if ($(element).hasClass('add')){
-					$(element).hide();
-				}
-			})
-		}
-		if ($(this).hasClass('delete')){
-			$('.btn_toogle_Skills_area').each(function(index, element){
-				if ($(element).hasClass('add')){
-					$(element).show();
-				}
-			})
-		}
+		
 	});	
 	
 	$(".btn_toogle_Technical_area").click(function(){
 		$("#Technical_area").toggle(1000);
-		if ($(this).hasClass('add')){
-			$('.btn_toogle_Technical_area').each(function(index, element){
-				if ($(element).hasClass('add')){
-					$(element).hide();
-				}
-			})
-		}
-		if ($(this).hasClass('delete')){
-			$('.btn_toogle_Technical_area').each(function(index, element){
-				console.log(index);
-				if ($(element).hasClass('add')){
-					$(element).show();
-				}
-			})
-		}
+		
 	});	
 	
 	$(".btn_toogle_Experience_area").click(function(){
 		$("#Experience_area").toggle(1000);
-		if ($(this).hasClass('add')){
-			$('.btn_toogle_Experience_area').each(function(index, element){
-				if ($(element).hasClass('add')){
-					$(element).hide();
-				}
-			})
-		}
-		if ($(this).hasClass('delete')){
-			$('.btn_toogle_Experience_area').each(function(index, element){
-				console.log(index);
-				if ($(element).hasClass('add')){
-					$(element).show();
-				}
-			})
-		}
 	});	
 	
 	$(".btn_toogle_Education_area").click(function(){
 		$("#Education_area").toggle(1000);
-		if ($(this).hasClass('add')){
-			$('.btn_toogle_Education_area').each(function(index, element){
-				if ($(element).hasClass('add')){
-					$(element).hide();
-				}
-			})
-		}
-		if ($(this).hasClass('delete')){
-			$('.btn_toogle_Education_area').each(function(index, element){
-				if ($(element).hasClass('add')){
-					$(element).show();
-				}
-			})
-		}
 	});	
 	
 	// Check for changing progressBar
@@ -279,6 +163,11 @@ function do_resize(textbox) {
 		textbox.rows = initialRow;
 	}
 }
+
+$(".custom-file-input").on("change", function() {
+	var fileName = $(this).val().split("\\").pop();
+	$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+  });
 
 function preview_image(event) {
 	var reader = new FileReader();

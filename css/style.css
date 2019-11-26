@@ -304,6 +304,8 @@ footer {
 	margin-bottom: 2em; 
 	padding-bottom: 2em; 
 	border-bottom: 1px solid #ccc; 
+	display: flex;
+	justify-content: space-between;
 }
 
 .yui-gc .yui-u,.yui-gf .yui-u{
@@ -333,8 +335,16 @@ footer {
 	width:12.3%;
 }
 
+.yui-gf div.third{
+	width:10%;
+}
+
+.yui-gf div.second{
+	width:70%;
+}
+
 .yui-gf .yui-u{
-	width:80.2%;
+	width:70.2%;
 }
 
 	.yui-gf .yui-u h2 { 

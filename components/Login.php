@@ -13,7 +13,7 @@
 			$result = $db_handle->runQuery($sql_query);
 			$num_rows = $db_handle->numRows($sql_query);
 			if ($num_rows==0) {
-				$error = "Your Login Name or Password is invalid";
+				$error = "Your Username or Password is invalid";
 			}else{
 				$_SESSION['displayname'] = $result[0]["fullname"];
 				$_SESSION['username'] = $result[0]["username"];

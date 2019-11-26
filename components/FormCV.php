@@ -12,24 +12,56 @@
 	</h6>
 	<div class="container">
 		<div id="formCV">
-			<input type="button" id="btn_form_review" class="btn btn-info" value="Review"/>
-			<button type="button" style="display: none" class="btn_toogle_Profile_area btn btn-info add"><i class="fas fa-plus"></i></button>
-			<button type="button" style="display: none" class="btn_toogle_Skills_area btn btn-info add "><i class="fas fa-plus"></i></button>
-			<button type="button"  style="display: none" class="btn_toogle_Technical_area btn btn-info add"><i class="fas fa-plus"></i></button>
-			<button type="button" style="display: none" class="btn_toogle_Experience_area btn btn-info add"><i class="fas fa-plus"></i></button>
-			<button type="button" style="display: none" class="btn_toogle_Education_area btn btn-info add"><i class="fas fa-plus"></i></button>
+			<div class="row">
+				<div class="col-md-12">
+					<input type="button" style="width: 100%" id="btn_form_review" class="btn btn-success" value="Review"/>
+				</div>
+			</div>
 			<form action="?page=FormCV_process" method="POST" enctype="multipart/form-data">
-				<div id="inputCV_processBar">
-					<span>Your progress: </span>	
-					<div class="progress">
-						<div class="progress-bar progress-bar-striped progress-bar-animated" style="width:0%">
-							
+				<div class="row">
+					<div class="col-12">
+						<div id="inputCV_processBar" style="padding: 10px 0">
+							<span>Your progress: </span>	
+							<div class="progress">
+								<div class="progress-bar progress-bar-striped progress-bar-animated" style="width:0%">
+									
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="text-left">
-					Name of CV: <input id="nameofCV-add" type="text" name="nameofCV"/><input type="file" onchange="preview_image(event)" name="image"/>
+
+				<div style="marign: 10px auto; width: 100%">
+					<div class="row text-center selectSection">
+						<div class="col-md-6">
+							<div class="form-group" style="margin-left: 70px">
+								<select class="form-control select_add_field">
+									<option value="-1" selected disabled>Select section</option>
+									<option value="Profile">Profile</option>
+									<option value="Skills">Skills</option>
+									<option value="Technical">Technical</option>
+									<option value="Experience">Experience</option>
+									<option value="Education">Education</option>
+
+								</select>
+
+							</div>
+						</div>
+						<div class="col-md-6 text-left">
+							<button class="btn btn-info btnAddField" type="button">Select</button>
+						</div>
+						
+					</div>
+					<div class="row ImageSection" >
+						<div class="col-md-6">
+							<div class="custom-file"  style="margin-left: 70px">
+								<input type="file"  class="custom-file-input" onchange="preview_image(event)" name="image"/>
+								<label class="custom-file-label" for="customFile">Choose File</label>
+							</div>	
+						</div>
+					</div>
 				</div>
+				
 				<div id="doc">
 					<div id="inner">
 						<div id="hd">
