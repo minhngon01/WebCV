@@ -20,6 +20,9 @@
 			<form action="?page=FormCV_process" method="POST" enctype="multipart/form-data">
 				<div class="row">
 					<div class="col-12">
+						<div class="text-left">
+							Name of CV: <input id="nameofCV-add" type="text" name="nameofCV"/>
+						</div>
 						<div id="inputCV_processBar" style="padding: 10px 0">
 							<span>Your progress: </span>	
 							<div class="progress">

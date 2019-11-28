@@ -1,6 +1,4 @@
-
-
-<div class = "home-hero-container" style = "background-color: white;">
+<div class = "home-hero-container" style = "background-color: #f2f5fa;">
     <div class = "home-hero-main">
         <div class = "home-hero-maincontent">
             <h1 class="home-hero-title">Only 2% of resumes make it past the first round. Be in the top 2%</h1>
