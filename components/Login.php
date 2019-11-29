@@ -32,15 +32,22 @@
 		}
 	}
 ?>
-
-<div id="Login_form" style = "margin-bottom: 100px; margin-top: 70px;"> 
-	<div class="log-form">
-		<h2>Login to your account</h2>
-		<form method="POST" action="">
-			<p style = "margin-right: 265px;">Username:</p><input type="text" title="username" name="username" placeholder="Enter username" />
-			<p style = "margin-right: 265px;">Password:</p><input type="password" title="username" name="password" placeholder="Enter password" />
-			<button type="submit" class="btn_login">Login</button>
-			<div style = "font-size:20px; color:#cc0000; margin-top:30px"><?php echo $error; ?></div>
-		</form>
+<body style= "background-color: #f2f5fa;">
+	<div id="Login_form"> 
+		<div class="log-form">
+			<h2>Login to your account</h2>
+			<form method="POST" action="">
+				<p style = "margin-right: 265px;">Username:</p><input type="text" id = "user_signin" title="username" name="username" placeholder="Enter username" />
+				<p style = "margin-right: 265px;">Password:</p><input type="password" title="username" name="password" placeholder="Enter password" />
+				<button type="submit" class="btn_login">Login</button>
+				<div style = "font-size:20px; color:#cc0000; margin-top:30px"><?php echo $error; ?></div>
+			</form>
+		</div>
 	</div>
-</div>
+</body>
+
+<script>
+	$(document).ready(function(){  
+			$('#user_signin').focus();
+	});
+</script>
