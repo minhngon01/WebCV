@@ -1,8 +1,8 @@
-<?php
-	$count = 0;
-	if(empty($_COOKIE['username'])){
+<?php	
+	if($_SESSION['isSessionOn'] == 0){
 		header("location:index.php");	
 	}
+	$count = 0;
 
 	$db_handle = new DBController();
 
@@ -10,7 +10,7 @@
 
 	$sql_query = "SELECT * from CV where user = '$user'";
 	$result = $db_handle->runQuery($sql_query);
-	$num_rows = $db_handle->numRows($sql_query);
+	$num_rows = $db_handle->numRows($sql_query);	
 ?>	
 <body style= "background-color: #f2f5fa;">
 	<div class = "row" style = "margin: 10px 0 10px;">

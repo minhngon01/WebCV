@@ -1,9 +1,11 @@
 <?php
 	$db_handle = new DBController();
 	$cookie = new Cookies();
-	$username = $_POST['username'];
-	$password = $_POST['password'];
+	
+	$username = isset($_POST['username']) ? $_POST['username'] : "";
+	$password = isset($_POST['password']) ? $_POST['password'] : "";
 	$error = "";
+
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 		if($username == "" || $password == "") {
 			$error = "Please enter username or password";
@@ -17,9 +19,9 @@
 			}else{
 				$_SESSION['displayname'] = $result[0]["fullname"];
 				$_SESSION['username'] = $result[0]["username"];
-				setcookie("username",$username,time() + $cookie->get_expired_time(),"/");
+				setcookie("username",$username,time() + $cookie->get_cookies_time(),"/");
 				$displayname = $_SESSION['displayname'];
-				$time = time() + $cookie->get_expired_time();
+				$time = time() + $cookie->get_session_time();
 				$sql_insert = "INSERT INTO session_table(session_key, session_value, cookies_time) VALUES ( '$username', '$displayname', '$time')";
 				if ($db_handle->runInsertQuery($sql_insert)) {
 					echo "New record created successfully";
@@ -32,7 +34,6 @@
 		}
 	}
 ?>
-
 <body style= "background-color: #f2f5fa;">
 	<div id="Login_form"> 
 		<div class="log-form">

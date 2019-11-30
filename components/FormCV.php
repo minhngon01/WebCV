@@ -1,8 +1,21 @@
-	<?php
-		if(empty($_COOKIE['username'])){
-			header("location:index.php");	
-		}
-	?>
+<?php
+	if($_SESSION['isSessionOn'] == 0){
+		header("location:index.php");	
+	}
+
+	if(isset($_GET['nameofCV'])){
+		$db_handle = new DBController();
+
+		$user = $_SESSION['username'];
+		$nameofCV = $_GET['nameofCV'];
+
+		$sql_query = "SELECT * from CV where user = '$user' and cv_name = '$nameofCV'";
+		$result = $db_handle->runQuery($sql_query);
+	}
+?>
+
+<script src="./js/FormCV.js"></script>
+<body>
 	<h6 class="text-danger">
 		Enter your infomation into below form. We will use these information to make your CV. If you can't input all of these, don't worry! We wil simply gather 
 		the rest to make your CV, but we recommend to input all information in order to make a good CV.
@@ -21,7 +34,7 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="text-left">
-							Name of CV: <input id="nameofCV-add" type="text" name="nameofCV"/>
+							Name of CV: <input id="nameofCV-add" type="text" name="nameofCV" required="required"/>
 						</div>
 						<div id="inputCV_processBar" style="padding: 10px 0">
 							<span>Your progress: </span>	
@@ -45,15 +58,12 @@
 									<option value="Technical">Technical</option>
 									<option value="Experience">Experience</option>
 									<option value="Education">Education</option>
-
 								</select>
-
 							</div>
 						</div>
 						<div class="col-md-6 text-left">
 							<button class="btn btn-info btnAddField" type="button">Select</button>
 						</div>
-						
 					</div>
 					<div class="row ImageSection" >
 						<div class="col-md-6">
@@ -70,15 +80,15 @@
 						<div id="hd">
 							<div class="yui-gc">
 								<div class="yui-u first">
-									<img id="CV_image" src="./imageStatic/download.png"/>
+									<img id="CV_image" src="./imageStatic/download.jpg"/>
 									<h1><input id="CVname-add" type="text" name="CVname"/></h1>
 									<h2><input id="CVposition-add" type="text" name="CVposition"/></h2>
 								</div>
 								<div class="yui-u">
 									<div class="contact-info">
-										<h3><input id="CVwebsite-add" type="text" name="CVwebsite"><img class="small_icon" src="./imageStatic/email.png" alt="email icon"/></h3>
-										<h3><input id="CVphone-add" type="text" name="CVphone"><img class="small_icon" src="./imageStatic/phone.png" alt="phone icon"/></h3>
-										<h3><input id="CVaddress-add" type="text" name="CVaddress"><img class="small_icon" src="./imageStatic/address.png" alt="address icon"/></h3>
+										<h3><input id="CVwebsite-add" type="text" name="CVwebsite"><img class="small_icon" src="./imageStatic/email.jpg" alt="email icon"/></h3>
+										<h3><input id="CVphone-add" type="text" name="CVphone"><img class="small_icon" src="./imageStatic/phone.jpg" alt="phone icon"/></h3>
+										<h3><input id="CVaddress-add" type="text" name="CVaddress"><img class="small_icon" src="./imageStatic/address.jpg" alt="address icon"/></h3>
 									</div>
 								</div>
 							</div>
@@ -160,4 +170,5 @@
 			</form>
 		</div>
 	</div>
+</body>
 

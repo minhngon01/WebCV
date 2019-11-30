@@ -16,13 +16,13 @@
 				<h5> CAREER RESOURCES</h5>
 				<div class="Content">
 					<div class="item">
-						<a href="#">How to Write a Resume</a>
+						<a href="https://www.monster.com/career-advice/article/how-to-write-a-resume" target="_blank">How to Write a Resume</a>
 					</div>
 					<div class="item">
-						<a href="#">Is It Time for a Career Change?</a>
+						<a href="https://www.careershifters.org/expert-advice/time-for-a-career-change-11-uncomfortable-signs-you-need-to-make-a-shift" target="_blank">Is It Time for a Career Change?</a>
 					</div>
 					<div class="item">
-						<a href="#">How to Write a Cover Letter That Lands You an Interview</a>
+						<a href="https://www.howmoneywalks.com/5-tips-for-writing-a-cover-letter-that-lands-you-an-interview/" target="_blank">How to Write a Cover Letter That Lands You an Interview</a>
 					</div>
 				</div>
 			</div>

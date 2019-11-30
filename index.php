@@ -5,8 +5,8 @@
 	$cookie = new Cookies();
 
 	if(empty($_COOKIE['username'])){
-		$_SESSION['enableDisplay'] = 0;
-		$_SESSION['user_role'] = 4;
+		$_SESSION['isSessionOn'] = 0;
+		$_SESSION['user_role'] = 3;
 	}
 	else{
 		$username = $_COOKIE['username'];
@@ -17,20 +17,24 @@
 		$num_rows = $db_handle->numRows($sql_query);
 
 		if($num_rows != 0){
-			$_SESSION['enableDisplay'] = 1;
-			$newExpiredTime = time() + $cookie->get_expired_time();
+			$_SESSION['isSessionOn'] = 1;
+			$newExpiredTime = time() + $cookie->get_session_time();
 			$_SESSION['displayname'] = $result[0]["session_value"];
 			$displayname = $_SESSION['displayname'];
 
-			setcookie("username",$username,time() + $cookie->get_expired_time(),"/");
+			setcookie("username",$username,time() + $cookie->get_cookies_time(),"/");
 			$sql_insert = "INSERT INTO session_table(session_key, session_value, cookies_time) VALUES ( '$username', '$displayname', '$newExpiredTime')";
 			$db_handle->runInsertQuery($sql_insert);
+
+			$sql_query2 = "SELECT * from user_info where username = '$username'";
+			$result2 = $db_handle->runQuery($sql_query2);
+
+			$_SESSION['user_role'] = $result2[0]["role"] == null ? 3 : $result2[0]["role"]; 
 		}
-
-		$sql_query2 = "SELECT * from user_info where username = '$username'";
-		$result2 = $db_handle->runQuery($sql_query2);
-
-		$_SESSION['user_role'] = $result2[0]["role"] == null ? 4 : $result2[0]["role"]; 
+		else{
+			$_SESSION['isSessionOn'] = 0;
+			$_SESSION['user_role'] = 3;
+		}
 	}
 	
 	if(isset($_GET['page']) || isset($_POST['page'])){

@@ -11,20 +11,21 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12 col-md-6">
-                        <div class="img">
+                          <div class="img">
                             <img src="./images/office1-4b814999eddc7918f5bdfabe2ad44acf294bb9ddfaba31cb16650aa9d086a1b5.jpg" class="img-fluid" alt="">
-                        </div>
+                          </div>
                         </div>
                         <div class="col-12 col-md-6">
-                            <div class="img">
+                           <div class="img">
                                 <img src="./images/office2-55aee052b07736a1f1531b732a7d0fabb573acbf9929daaeea9aa1c0a15c4c80.jpg" class="ig-fluid" alt="">
-                            </div>
+                           </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        </div> 
-    </div> 
+           
+                
+            </div>
+        </div>          
+    </div>
 </body>
-    

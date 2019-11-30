@@ -36,10 +36,15 @@
 	}
 
 	class Cookies{
-		public $expired_time = 300;
+		private $session_expired_time = 900;
+		private $cookies_expired_time = 86400 * 30; // 1 month
 
-		function get_expired_time(){
-			return $this->expired_time;
+		function get_session_time(){
+			return $this->session_expired_time;
+		}
+
+		function get_cookies_time(){
+			return $this->cookies_expired_time;
 		}
 	}
 ?>

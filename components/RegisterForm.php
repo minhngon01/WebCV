@@ -3,6 +3,8 @@
 	$defaultRole = 2;
 	$msg = "";
 	$err = "";
+	$error = "";
+	
 	if(isset($_POST['reg_user']))
 	{
 		$username = $_POST['user_signup'];
@@ -30,18 +32,20 @@
 			header('location:index.php');	
 		}
 	}
+
 ?>
 
+<script src="./js/RegisterForm.js"></script>
 <body style= "background-color: #f2f5fa;">
+
 	<div id="Register" style= "margin-top:-50px; margin-bottom:20px;">
-		<form id="RegisterForm"  name="RegisterForm" method="post" onSubmit = 'return checkRegister()' autocomplete='off' >
+		<form id="RegisterForm"  name="RegisterForm" method="post" onSubmit = 'return checkRegister()' >
 			<h2>Sign Up</h2>
+				<div id="availability" style = "margin-top: 10px;"></div>
 			<p>
 				<label for="Name" class="floatLabel">Name</label>
 				<input id="user_signup" name="user_signup" type="text" required="required">
-				<div id="availability" style = "margin-top: 20px;"></div>
 			</p>
-			
 		
 			<p>
 				<label for="Email" class="floatLabel">Email</label>
@@ -67,61 +71,6 @@
 		</form>
 	</div>
 </body>
-
-<script>
-	$(document).ready(function(){  
-     	$('#user_signup').on('keyup',function(){  
-			var username = $('#user_signup').val(); 
-			
-			$.ajax({  
-				url:"components/checkdata.php",  
-				method: "POST",  
-				data: {user_name: username},  
-				success:function(data){  
-					$('#availability').html(data);
-
-				},
-				error: function (error) {
-					console.log(error);
-				}
-			});  
-     	});  
-	});  
- 
-
-var password = document.getElementById("pass_signup")
-  , confirm_password = document.getElementById("pass_signup_confirm")
-  , username = document.getElementById("user_signup");
-function validatePassword(){
-	if (password.value.length < 6) {
-		password.setCustomValidity("Password must have at least 6 characters");
-	} else {
-		password.setCustomValidity('');
-	}
-	if(password.value != confirm_password.value) {
-		confirm_password.setCustomValidity("Passwords Don't Match");
-	} else {
-		confirm_password.setCustomValidity('');
-	}
-	
-}
-
-function validateUsername() {
-	if( (username.value.length <= 5 || username.value.length >= 15)){
-		username.setCustomValidity("Your username must contain words and at least 6 to 15 character");
-	}
-	else if((!isNaN(username.value))){
-		username.setCustomValidity("Your username must contain words and at least 6 to 15 character");
-	}
-	else {
-		username.setCustomValidity('');
-	}
-}
-
-password.onkeyup = validatePassword;
-confirm_password.onkeyup = validatePassword;
-username.onkeyup = validateUsername;
-</script>
 
 
 
