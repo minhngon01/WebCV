@@ -1,4 +1,5 @@
 <?php
+	$count = 0;
 	if(empty($_COOKIE['username'])){
 		header("location:index.php");	
 	}
@@ -11,37 +12,39 @@
 	$result = $db_handle->runQuery($sql_query);
 	$num_rows = $db_handle->numRows($sql_query);
 ?>	
-<div>
-	<?php
-		if($num_rows == 0){
-			echo "<div>
-					<img src=\"./imageStatic/error_cv_empty.png\" width=\"60%\" height=\"30%\" alt=\"cv_not_found\"/>
-					<h5 class=\"text-danger\">Oops!It seem you haven't created any CV.<a href=\"?page=FormCV\">Click here</a> or \"Create CV\" to start making one.</h5>
-				</div>";
-		}
-		else{
-			echo "<h5 class=\"text-left\">
-					Your maximum number of CV you can create is: ";
-						if($_SESSION['user_role'] <= 1)
+<body style= "background-color: #f2f5fa;">
+	<div class = "row" style = "margin: 10px 0 10px;">
+		<p style= "font-size: 30px; margin-left: 20px;"> You can create maximum
+			<?php if($_SESSION['user_role'] <= 1)
 						{ 
-							echo 5 . "<br>";
+							echo 5 . " CV";
 						}
 						else {
-							echo 3 . "<br>";
+							echo 3 . " CV";
 						}
-			echo	"You created: " . $num_rows . " CV <br>
-				</h5>
-				<img src=\"./imageStatic/cv_template.png\" alt=\"cv_template\"/>
-				<h4>
-					Click on the name of CV you want to review to view it. 
-				</h4>;
-				<h3>";
-				$count = 1;
-				while($count <= $num_rows){
-					echo "CV " . $count . ": <a href=\"?page=ViewCVOption_process&cv_name=" . $result[$count - 1]['cv_name'] . "\">" . $result[$count - 1]['cv_name'] . "</a><br>";
-					$count++;
-				}
-			echo "</h3>";
-		}
-	?>
-</div>
+			?>
+	</div>
+
+	<div class = "row" style = "margin: 0px 0 10px;">
+		<?php while($count < $num_rows): ?>
+				<div class = "col-sm-4" style = "margin: 20px 0 20px;">
+						<div style="border:3px solid black; background-color:white; border-radius:5px; padding:10px; align:center;" >
+							<img src="./imageStatic/cv_template.png" class="img-responsive" style ="max-width:300px;" /><br />
+					
+							<h4 class="text-info">Name of CV:</h4>
+					
+							<h4 class="text-danger"><?php echo $result[$count]['cv_name']; ?></h4>
+					
+							<a style = "border: none; color: green; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;" 
+							href = "?page=ViewCVOption_process&cv_name=<?php echo $result[$count]['cv_name'] ?>" type = "button"> View CV </a>
+							<a style = "border: none; color: blue; padding: 15px 26px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;"
+							type = "button"> Edit CV </a>
+							<a style = "border: none; color: red; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;"
+							href = "?page=DeleteCV&cv_name=<?php echo $result[$count]['cv_name'] ?>" type = "button"> Delete CV </a>
+							
+						</div>
+				</div>
+			<?php $count++; ?>
+		<?php endwhile ?>
+	</div>
+</body>

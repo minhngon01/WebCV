@@ -102,28 +102,28 @@ $(document).ready(function(){
 	});
 });
 
-function checkRegister(){
-	var userSignup = $('#user_signup').val();
-	var passSignup = $('#pass_signup').val();
-	var passSignupConfirm = $('#pass_signup_comfirm').val();
+// function checkRegister(){
+// 	var userSignup = $('#user_signup').val();
+// 	var passSignup = $('#pass_signup').val();
+// 	var passSignupConfirm = $('#pass_signup_comfirm').val();
 
-	if(userSignup.length > 50){
-		alert("Username is too long");
-		return false;
-	}
+// 	if(userSignup.length > 50){
+// 		alert("Username is too long");
+// 		return false;
+// 	}
 
-	if(passSignup.length > 8){
-		alert("Password is too long");
-		return false;
-	}
+// 	if(passSignup.length > 8){
+// 		alert("Password is too long");
+// 		return false;
+// 	}
 
-	if(passSignup != passSignupConfirm){
-		alert("Your password comfirmation is not match");
-		return false;
-	}
+// 	if(passSignup != passSignupConfirm){
+// 		alert("Your password comfirmation is not match");
+// 		return false;
+// 	}
 
-	return true;
-}
+// 	return true;
+// }
 
 function printDiv(selector) {
     var prtContent = document.getElementById(selector);
