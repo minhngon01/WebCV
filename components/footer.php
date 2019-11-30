@@ -1,104 +1,43 @@
-	<footer>
+    <footer>
 	    <div class="container-fluid">
 	        <div class="row">
-	            <div class="col-12 col-md-2">
-	                <p>Connect with us
-	                        on social media</p>
+	            <div class="col-12 col-md-3">
+	                <p>Connect with us on social media</p>
 	                <div class="socical_network">
 	                    <div class="social">
-	                        <i class="fab fa-facebook-f"></i>
+	                    	<a class="text-warning" href="https://www.facebook.com/minhngon.dng" target="_blank"><i class="fab fa-facebook-f"></i></a>
 	                    </div>
 	                    <div class="social">
-	                        <i class="fab fa-instagram"></i>
-	                    </div>
-	                    <div class="social">
-	                        <i class="fab fa-linkedin"></i>
-	                    </div>
-	                    
-	                </div>
-	            </div>
-	            <div class="col-12 col-md-2">
-	                <h5> JOB SEEKERS</h5>
-	                <div class="Content">
-	                    <div class="item">
-	                        <a href="#">
-	                                JOB SEEKERS
-	                                Build a Resume</a>
-	                    </div>
-	                    <div class="item">
-	                        <a href="">
-	                            Resume example</a>
-	                    </div>
-	                    <div class="item">
-	                        <a href="">Job Search</a>
+	                        <a class="text-warning" href="https://www.instagram.com/bin3008/" target="_blank"><i class="fab fa-instagram"></i></a>
 	                    </div>
 	                </div>
 	            </div>
-	            <div class="col-12 col-md-2">
+	            <div class="col-12 col-md-4">
 	                <h5> CAREER RESOURCES</h5>
 	                <div class="Content">
 	                    <div class="item">
-	                        <a href="">How to Write a Resume</a>
+	                        <a href="https://www.monster.com/career-advice/article/how-to-write-a-resume" target="_blank">How to Write a Resume</a>
 	                    </div>
 	                    <div class="item">
-	                        <a href="">Is It Time for a Career Change?</a>
+	                        <a href="https://www.careershifters.org/expert-advice/time-for-a-career-change-11-uncomfortable-signs-you-need-to-make-a-shift" target="_blank">Is It Time for a Career Change?</a>
 	                    </div>
 	                    <div class="item">
-	                        <a href="">How to Write a Cover Letter That Lands You an Interview</a>
+	                        <a href="https://www.howmoneywalks.com/5-tips-for-writing-a-cover-letter-that-lands-you-an-interview/" target="_blank">How to Write a Cover Letter That Lands You an Interview</a>
 	                    </div>
-	                    <div class="item">
-	                        <a href=""> Guides</a>
-	                    </div>
-	                    <div class="item">
-	                        <a href="">Blog</a>
-	                    </div>
-	                    
 	                </div>
 	            </div>
-	            <div class="col-12 col-md-2">
-	                <h5>OUR COMPANY</h5>
+	            <div class="col-12 col-md-3">
+	                <h5>OUR TEAM</h5>
 	                <div class="Content">
 	                    <div class="item">
-	                        <a href=""> About Us</a>
-	                    </div>
+	                        <a href="#"> About Us</a>
+	                    </div>	                    
 	                    <div class="item">
-	                        <a href="">Product Updates</a>
+	                        <a href="#">Contact Us</a>
 	                    </div>
-	                    <div class="item">
-	                        <a href="">Pricing</a>
-	                    </div>
-	                    <div class="item">
-	                        <a href=""> Media Kit</a>
-	                    </div>
-	                    <div class="item">
-	                        <a href="">Affiliates</a>
-	                    </div>
-	                    
-	                </div>
-	            </div>
-	            <div class="col-12 col-md-2">
-	                <h5>SUPPORT</h5>
-	                <div class="Content">
-	                    <div class="item">
-	                        <a href="">FAQ</a>
-	                    </div>
-	                    <div class="item">
-	                        <a href="">Contact Us</a>
-	                    </div>
-	                    <div class="item">
-	                        <a href="">Terms of Service</a>
-	                    </div>
-	                    <div class="item">
-	                        <a href="">Disclaimer</a>
-	                    </div>
-	                    <div class="item">
-	                        <a href="">Privacy</a>
-	                    </div>
-	                    
 	                </div>
 	            </div>
 	        </div>
 	    </div>
 	</footer>
-  </body>
 </html>
