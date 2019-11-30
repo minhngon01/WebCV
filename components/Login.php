@@ -3,7 +3,7 @@
 	$cookie = new Cookies();
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-
+	$error = "";
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 		if($username == "" || $password == "") {
 			$error = "Please enter username or password";
@@ -32,6 +32,7 @@
 		}
 	}
 ?>
+
 <body style= "background-color: #f2f5fa;">
 	<div id="Login_form"> 
 		<div class="log-form">
