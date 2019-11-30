@@ -35,9 +35,13 @@
 					
 							<h4 class="text-danger"><?php echo $result[$count]['cv_name']; ?></h4>
 					
-							<a href = "?page=ViewCVOption_process&cv_name=<?php echo $result[$count]['cv_name'] ?>" type = "button"> View CV </a>
-							<a type = "button"> Edit CV </a>
-							<a href = "?page=ViewCVOption_process&cv_name=<?php echo $result[$count]['cv_name'] ?>"type = "button"> Edit CV </a>
+							<a style = "border: none; color: green; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;" 
+							href = "?page=ViewCVOption_process&cv_name=<?php echo $result[$count]['cv_name'] ?>" type = "button"> View CV </a>
+							<a style = "border: none; color: blue; padding: 15px 26px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;"
+							type = "button"> Edit CV </a>
+							<a style = "border: none; color: red; padding: 15px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;"
+							href = "?page=DeleteCV&cv_name=<?php echo $result[$count]['cv_name'] ?>" type = "button"> Delete CV </a>
+							
 						</div>
 				</div>
 			<?php $count++; ?>
