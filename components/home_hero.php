@@ -6,7 +6,6 @@
             the exact ‘resume rules’ employers look for. Easy to use &amp; done within minutes
             - try now for free!</p>
             <div class="home-hero-cta">
-                 
                 <?php if(isset($_SESSION['username'])): ?>
                     <a class="home-button button" href="?page=FormCV">Create My Resume</a>  
                 <?php else: ?>
